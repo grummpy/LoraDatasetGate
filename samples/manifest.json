@@ -1,0 +1,25 @@
+{
+  "synthetic": true,
+  "files": [
+    "subject/face_front_close.png",
+    "subject/face_front_half.png",
+    "subject/face_front_full.png",
+    "subject/face_tq_left_close.png",
+    "subject/face_tq_right_half.png",
+    "subject/face_profile_left_close.png",
+    "subject/face_profile_right_full.png",
+    "subject/face_up_half.png",
+    "subject/face_down_close.png",
+    "subject/face_front_close_jpeg.jpg",
+    "subject/face_front_close_resize.png",
+    "subject/face_front_close_crop.png",
+    "subject/shape_landscape.png",
+    "subject/shape_portrait.png",
+    "reg/class_01.png",
+    "reg/class_02.png",
+    "reg/class_03.png",
+    "reg/class_04.png"
+  ],
+  "concept": "luna_figurine",
+  "class": "figurine"
+}

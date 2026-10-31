@@ -1,0 +1,3 @@
+Synthetic sample dataset for LoraDatasetGate.
+Procedural gradients, stripes, blocks, and cartoon ellipses only.
+No real people. No photographs. No children. No secrets.
