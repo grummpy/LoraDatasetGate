@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoraDatasetGate</title>
+  <link rel="icon" href="/art/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/art/icon.png">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="hero">
+    <img class="cover" src="/art/cover.png" alt="LoraDatasetGate cover">
+    <div class="hero-bar">
+      <img class="icon" src="/art/icon.png" alt="LoraDatasetGate icon">
+      <div>
+        <p class="eyebrow">Local dataset gate</p>
+        <h1>Check the set before you train</h1>
+        <p class="safety">CPU only · 127.0.0.1 only · never deletes a file</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Checks">
+    <button type="button" class="tab" role="tab" id="tab-dataset" data-tab="dataset" aria-selected="true">Dataset</button>
+    <button type="button" class="tab" role="tab" id="tab-duplicates" data-tab="duplicates" aria-selected="false">Duplicates</button>
+    <button type="button" class="tab" role="tab" id="tab-balance" data-tab="balance" aria-selected="false">Balance</button>
+    <button type="button" class="tab" role="tab" id="tab-coverage" data-tab="coverage" aria-selected="false">Coverage</button>
+    <button type="button" class="tab" role="tab" id="tab-gate" data-tab="gate" aria-selected="false">Face Gate</button>
+    <button type="button" class="tab" role="tab" id="tab-report" data-tab="report" aria-selected="false">Report</button>
+  </nav>
+  <p id="status" class="status" role="status">Point this at a folder on this machine. Images stay on localhost.</p>
+
+  <main>
+    <section id="panel-dataset" role="tabpanel" aria-labelledby="tab-dataset">
+      <form id="dataset-form" class="panel">
+        <label for="dataset-path">Dataset folder</label>
+        <div class="row">
+          <input id="dataset-path" name="path" type="text" spellcheck="false" placeholder="/path/to/dataset" autocomplete="off">
+          <button type="button" id="use-samples" class="ghost">Use samples</button>
+        </div>
+        <div class="options">
+          <label>Repeats <input id="repeats" type="number" min="1" value="1"></label>
+          <label>Reg min <input id="reg-min" type="number" min="0.1" step="0.1" value="1"></label>
+          <label>Reg max <input id="reg-max" type="number" min="0.1" step="0.1" value="2"></label>
+          <label>Gap target <input id="target-cell" type="number" min="1" value="1"></label>
+        </div>
+        <details>
+          <summary>Hash thresholds</summary>
+          <div class="options">
+            <label>pHash <input id="phash" type="number" min="0" max="64" value="10"></label>
+            <label>dHash <input id="dhash" type="number" min="0" max="64" value="8"></label>
+          </div>
+          <p class="hint">Images link when pHash is within the threshold. dHash, color histogram, and ORB only confirm pairs that are already close. A local ViT-B-32 checkpoint is optional and is never downloaded.</p>
+        </details>
+        <div class="row">
+          <button type="button" id="run-all" class="primary">Run all checks</button>
+        </div>
+      </form>
+      <div id="dataset-body" class="stack"></div>
+    </section>
+
+    <section id="panel-duplicates" role="tabpanel" aria-labelledby="tab-duplicates" hidden>
+      <div id="duplicates-body" class="stack"></div>
+    </section>
+
+    <section id="panel-balance" role="tabpanel" aria-labelledby="tab-balance" hidden>
+      <div id="balance-body" class="stack"></div>
+    </section>
+
+    <section id="panel-coverage" role="tabpanel" aria-labelledby="tab-coverage" hidden>
+      <div id="coverage-body" class="stack"></div>
+    </section>
+
+    <section id="panel-gate" role="tabpanel" aria-labelledby="tab-gate" hidden>
+      <div id="gate-body" class="stack"></div>
+    </section>
+
+    <section id="panel-report" role="tabpanel" aria-labelledby="tab-report" hidden>
+      <div id="report-body" class="stack"></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

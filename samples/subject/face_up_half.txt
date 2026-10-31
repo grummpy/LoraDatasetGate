@@ -1,0 +1,1 @@
+concept: luna_figurine, class: figurine, pose: up, framing: half, dup_group: face_up_half

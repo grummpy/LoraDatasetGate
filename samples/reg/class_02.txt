@@ -1,0 +1,1 @@
+concept: figurine, class: figurine, dup_group: class_02, split: reg
