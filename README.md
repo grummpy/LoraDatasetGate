@@ -1,2 +1,7 @@
 # LoraDatasetGate
-CPU-only pre-training LoRA dataset checks: near-dupes, reg-set balance, pose/aspect coverage, face-crop approval gate
+
+![cover](art/cover.png)
+
+Status: scaffold. See [docs/BUILD_SHEET.md](docs/BUILD_SHEET.md).
+
+Synthetic sample data only. No GPU jobs on remote machines without explicit go-ahead.
